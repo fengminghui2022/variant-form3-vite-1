@@ -1,0 +1,13 @@
+stages:
+  - sync
+
+sync_to_gitlab:
+  stage: sync
+  only:
+    - master  # 仅在将更改推送到主分支时同步111111
+  script:
+    - git clone --mirror https://github.com/fengminghui2022/variant-form3-vite-1  # 克隆 GitHub 项目
+    - cd repository.git
+    - git remote set-url --push test https://github.com/vform666/variant-form3-vite  # 设置推送到 GitLab 仓库
+    - git fetch -p test
+    - git push --mirror test  # 推送到 GitLab
