@@ -8,6 +8,6 @@ sync_to_gitlab:
   script:
     - git clone --mirror https://github.com/fengminghui2022/variant-form3-vite-1  # 克隆 GitHub 项目
     - cd repository.git
-    - git remote set-url --push test https://github.com/vform666/variant-form3-vite  # 设置推送到 GitLab 仓库
-    - git fetch -p test
-    - git push --mirror test  # 推送到 GitLab
+    - git remote set-url --push master http://139.196.97.162:11033/madapeng/test.git  # 设置推送到 GitLab 仓库
+    - git fetch -p master
+    - git push --mirror master  # 推送到 GitLab
